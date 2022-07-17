@@ -2,10 +2,12 @@ local options = {
 	-- Colors
 	syntax = "on",
 	background = "dark",
+	termguicolors = true,
 
 	-- Indentation
 	tabstop = 4,
 	shiftwidth = 4,
+	autoindent = true,
 	smartindent = true,
 
 	filetype = "plugin",
@@ -16,17 +18,20 @@ local options = {
 	clipboard = "unnamedplus",
 
 	-- UI
-	relativenumber = true,
-	cursorline = true,
-	numberwidth = 2,
-	showmode = false,
 	mouse = "a",
 	wrap = true,
+	numberwidth = 2,
+	showmode = false,
+	cursorline = true,
+	relativenumber = true,
 	list = true,
-	listchars = "tab:» ,nbsp:+,space:⋅,extends:→,precedes:←",
+	listchars = "tab:» ,space:⋅",
 
-	-- Swapfile
+	-- Others
 	swapfile = false,
+	completeopt = "menu",
+	completeopt = "menuone",
+	completeopt = "noselect",
 }
 
 for o, v in pairs(options) do

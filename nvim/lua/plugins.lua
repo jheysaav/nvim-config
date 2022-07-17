@@ -1,8 +1,23 @@
+local install_path = vim.fn.stdpath("data")
+	.. "/site/pack/packer/start/packer.nvim"
+local packer_bootstrap = nil
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+	packer_bootstrap = vim.fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+end
+
 return require("packer").startup({
 	function(use)
 		use("wbthomason/packer.nvim")
 
 		-- Speed
+		use("PHSix/faster.nvim")
 		use("nathom/filetype.nvim")
 		use("lewis6991/impatient.nvim")
 
@@ -24,7 +39,7 @@ return require("packer").startup({
 		use("kyazdani42/nvim-tree.lua")
 		use("nvim-telescope/telescope.nvim")
 
-		-- Colors & icons
+		-- Colours & icons
 		use("navarasu/onedark.nvim")
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -40,6 +55,7 @@ return require("packer").startup({
 		use("lewis6991/gitsigns.nvim")
 		use("akinsho/bufferline.nvim")
 		use("nvim-lualine/lualine.nvim")
+		use("gpanders/editorconfig.nvim")
 		use("norcalli/nvim-colorizer.lua")
 		use("antoinemadec/FixCursorHold.nvim")
 		use("lukas-reineke/indent-blankline.nvim")
@@ -49,6 +65,10 @@ return require("packer").startup({
 				vim.notify = require("notify")
 			end,
 		})
+
+		if packer_bootstrap then
+			require("packer").sync()
+		end
 	end,
 
 	config = {

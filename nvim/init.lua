@@ -10,6 +10,8 @@ require("config.cmp")
 require("config.treesitter")
 
 require("config.lualine")
+require("config.bufferline")
+
 require("config.onedark")
 require("config.colorizer")
 

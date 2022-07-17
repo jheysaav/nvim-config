@@ -15,9 +15,7 @@ require("nvim-treesitter.configs").setup({
 		"html",
 		"fish",
 	},
-	highlight = {
-		enable = true,
-	},
+	highlight = { enable = true },
 	autopairs = { enable = true },
 	indent = { enable = true },
 	context_commentstring = { enable = true },

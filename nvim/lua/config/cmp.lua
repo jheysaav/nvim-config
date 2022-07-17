@@ -8,26 +8,19 @@ cmp.setup({
 		end,
 	},
 	mapping = {
+		["<esc>"] = cmp.mapping.abort(),
 		["<C-Space>"] = cmp.mapping.complete(),
-		["<Esc>"] = cmp.mapping.abort(),
-		["<Down>"] = cmp.mapping.select_next_item(),
-		["<Up>"] = cmp.mapping.select_prev_item(),
+		["<up>"] = cmp.mapping.select_prev_item(),
+		["<down>"] = cmp.mapping.select_next_item(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	},
 	formatting = {
-		format = lspkind.cmp_format({
-			menu = {
-				nvim_lsp = "[LSP]",
-				luasnip = "[SNIP]",
-				path = "[PATH]",
-				buffer = "[BUF]",
-			},
-		}),
+		format = lspkind.cmp_format(),
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
+		{ name = "luasnip", max_item_count = 10 },
 		{ name = "path" },
-		{ name = "buffer" },
+		{ name = "buffer", max_item_count = 5 },
 	},
 })
