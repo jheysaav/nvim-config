@@ -5,23 +5,32 @@ require("nvim-lsp-installer").setup({
 
 local servers = {
 	rust_analyzer = {},
-	asm_lsp = {},
-	tsserver = {},
-	denols = {},
+	denols = {
+		root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc", "import_map.json", "mod.ts", "deps.ts", "tsconfig.json"),
+		init_options = {
+			enable = true,
+			unstable = true,
+		},
+	},
+	tsserver = {
+		root_dir = lsp.util.root_pattern("package.json", "tsconfig.json")
+	},
 	taplo = {},
-	clangd = {},
 	gopls = {},
+	clangd = {},
+	asm_lsp = {},
 
 	html = {},
-	emmet_ls = {},
-	cssls = {},
 	volar = {},
+	cssls = {},
+	emmet_ls = {},
 	tailwindcss = {},
 
+	ltex = {},
 	jsonls = {},
 	yamlls = {},
 	pyright = {},
-	ltex = {},
+	dockerls = {},
 	sumneko_lua = {
 		settings = {
 			Lua = {
@@ -31,7 +40,6 @@ local servers = {
 			},
 		},
 	},
-	dockerls = {},
 }
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(

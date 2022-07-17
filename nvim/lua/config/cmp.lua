@@ -8,10 +8,10 @@ cmp.setup({
 		end,
 	},
 	mapping = {
-		["<esc>"] = cmp.mapping.abort(),
+		["<Esc>"] = cmp.mapping.abort(),
 		["<C-Space>"] = cmp.mapping.complete(),
-		["<up>"] = cmp.mapping.select_prev_item(),
-		["<down>"] = cmp.mapping.select_next_item(),
+		["<Tab>"] = cmp.mapping.select_next_item(),
+		["<S-Tab>"] = cmp.mapping.select_prev_item(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 	},
 	formatting = {

@@ -17,7 +17,6 @@ return require("packer").startup({
 		use("wbthomason/packer.nvim")
 
 		-- Speed
-		use("PHSix/faster.nvim")
 		use("nathom/filetype.nvim")
 		use("lewis6991/impatient.nvim")
 
@@ -46,10 +45,10 @@ return require("packer").startup({
 			run = ":TSUpdate",
 		})
 		use("onsails/lspkind.nvim")
-		use("mortepau/codicons.nvim")
 		use("kyazdani42/nvim-web-devicons")
 
 		-- Utils
+		use("rcarriga/nvim-notify")
 		use("nvim-lua/plenary.nvim")
 		use("windwp/nvim-autopairs")
 		use("lewis6991/gitsigns.nvim")
@@ -57,14 +56,7 @@ return require("packer").startup({
 		use("nvim-lualine/lualine.nvim")
 		use("gpanders/editorconfig.nvim")
 		use("norcalli/nvim-colorizer.lua")
-		use("antoinemadec/FixCursorHold.nvim")
 		use("lukas-reineke/indent-blankline.nvim")
-		use({
-			"rcarriga/nvim-notify",
-			config = function()
-				vim.notify = require("notify")
-			end,
-		})
 
 		if packer_bootstrap then
 			require("packer").sync()

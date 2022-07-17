@@ -1,9 +1,9 @@
-require("config.impatient")
-require("config.filetype")
+require("impatient")
+require("filetype")
 
-require("plugins")
-require("keymaps")
 require("options")
+require("keymaps")
+require("plugins")
 
 require("config.lsp")
 require("config.cmp")
@@ -16,5 +16,6 @@ require("config.onedark")
 require("config.colorizer")
 
 require("config.tree")
+require("config.notify")
 require("config.gitsigns")
 require("config.autopairs")

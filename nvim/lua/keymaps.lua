@@ -1,6 +1,20 @@
 local telescope_builtin = require("telescope.builtin")
 
 local maps = {
+	-- Basic
+	["<leader>w"] = function()
+		vim.cmd([[w]])
+	end,
+	["<leader>ww"] = function()
+		vim.cmd([[w!]])
+	end,
+	["<leader>q"] = function()
+		vim.cmd([[q]])
+	end,
+	["<leader>qq"] = function()
+		vim.cmd([[q!]])
+	end,
+
 	-- Telescope
 	["<leader>ff"] = telescope_builtin.find_files,
 
@@ -26,11 +40,13 @@ local maps = {
 		vim.cmd([[wincmd j]])
 	end,
 
-	-- Speed
-	["j"] = "<Plug>(faster_move_gj)",
-	["k"] = "<Plug>(faster_move_gk)",
-	["<down>"] = "<Plug>(faster_move_gj)",
-	["<up>"] = "<Plug>(faster_move_gk)",
+	-- Buffers
+	["<C-q>"] = function()
+		vim.cmd([[bdelete]])
+	end,
+	["C-Tab"] = function()
+		vim.cmd([[bnext]])
+	end,
 }
 
 vim.g.mapleader = " "
