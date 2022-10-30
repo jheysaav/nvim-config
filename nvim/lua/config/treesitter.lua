@@ -18,4 +18,5 @@ require("nvim-treesitter.configs").setup({
 		"latex",
 		"python"
 	},
+	highlight = { enable = true }
 })

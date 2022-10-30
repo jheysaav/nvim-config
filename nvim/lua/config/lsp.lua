@@ -65,9 +65,9 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
+
 vim.diagnostic.config({
-	virtual_text = {
-		prefix = "▎",
-	},
+	virtual_text = false,
 	update_in_insert = true,
 })

@@ -26,9 +26,7 @@ local options = {
 
 	-- Others
 	swapfile = false,
-	completeopt = "menu",
-	completeopt = "menuone",
-	completeopt = "noselect",
+	updatetime = 250
 }
 
 for o, v in pairs(options) do
