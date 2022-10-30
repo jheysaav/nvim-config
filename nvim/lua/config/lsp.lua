@@ -37,7 +37,6 @@ local servers = {
 	jsonls = {},
 	yamlls = {},
 	pyright = {},
-	julials = {},
 	dockerls = {},
 	sumneko_lua = {
 		settings = {
