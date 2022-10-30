@@ -7,12 +7,9 @@ local options = {
 	-- Indentation
 	tabstop = 4,
 	shiftwidth = 4,
+	softtabstop = 4,
 	autoindent = true,
 	smartindent = true,
-
-	filetype = "plugin",
-	filetype = "indent",
-	filetype = "on",
 
 	-- Clipboard
 	clipboard = "unnamedplus",

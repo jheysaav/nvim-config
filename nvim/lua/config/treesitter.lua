@@ -13,6 +13,5 @@ require("nvim-treesitter.configs").setup({
 		"lua",
 		"html",
 	},
-	indent = { enable = true },
 	highlight = { enable = true },
 })

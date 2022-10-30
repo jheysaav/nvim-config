@@ -6,14 +6,20 @@ require("nvim-lsp-installer").setup({
 local servers = {
 	rust_analyzer = {},
 	denols = {
-		root_dir = lsp.util.root_pattern("deno.json", "deno.jsonc", "import_map.json", "mod.ts", "deps.ts", "tsconfig.json"),
+		root_dir = lsp.util.root_pattern(
+			"mod.ts",
+			"deps.ts",
+			"deno.json",
+			"deno.jsonc",
+			"import_map.json"
+		),
 		init_options = {
 			enable = true,
 			unstable = true,
 		},
 	},
 	tsserver = {
-		root_dir = lsp.util.root_pattern("package.json", "tsconfig.json")
+		root_dir = lsp.util.root_pattern("package.json", "tsconfig.json"),
 	},
 	taplo = {},
 	gopls = {},
@@ -23,6 +29,7 @@ local servers = {
 	html = {},
 	volar = {},
 	cssls = {},
+	eslint = {},
 	emmet_ls = {},
 	tailwindcss = {},
 
@@ -30,6 +37,7 @@ local servers = {
 	jsonls = {},
 	yamlls = {},
 	pyright = {},
+	julials = {},
 	dockerls = {},
 	sumneko_lua = {
 		settings = {
@@ -42,7 +50,7 @@ local servers = {
 	},
 }
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(
+local capabilities = require("cmp_nvim_lsp").default_capabilities(
 	vim.lsp.protocol.make_client_capabilities()
 )
 local opts = { capabilities = capabilities }
