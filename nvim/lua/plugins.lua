@@ -39,12 +39,12 @@ return require("packer").startup({
 		use("nvim-telescope/telescope.nvim")
 
 		-- Colours & icons
-		use("navarasu/onedark.nvim")
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
 		})
 		use("onsails/lspkind.nvim")
+		use("projekt0n/github-nvim-theme")
 		use("kyazdani42/nvim-web-devicons")
 
 		-- Utils

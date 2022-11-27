@@ -1,7 +1,7 @@
 local options = {
 	-- Colors
 	syntax = "on",
-	background = "dark",
+	background = "light",
 	termguicolors = true,
 
 	-- Indentation

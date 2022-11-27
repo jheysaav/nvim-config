@@ -12,7 +12,7 @@ require("config.treesitter")
 require("config.lualine")
 require("config.bufferline")
 
-require("config.onedark")
+require("config.github-theme")
 require("config.colorizer")
 
 require("config.tree")
