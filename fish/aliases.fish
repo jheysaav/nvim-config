@@ -1,0 +1,13 @@
+alias rm "rm -rf"
+alias ll "ls -lh"
+alias lsa "ls -lah"
+alias md "mkdir -p"
+
+alias g "git"
+alias ga "git add"
+alias gp "git push"
+alias gs "git status"
+alias gaa "git add --all"
+alias gpf "git push --force"
+alias gc "git commit -am"
+alias gl "git log --oneline --decorate --graph"
