@@ -1,5 +1,5 @@
 local options = {
-	-- Colors
+	-- Colours
 	syntax = "on",
 	background = "light",
 	termguicolors = true,
@@ -23,10 +23,11 @@ local options = {
 	relativenumber = true,
 	list = true,
 	listchars = "tab:» ,space:⋅",
+	completeopt = { "menu", "menuone", "noselect" },
 
 	-- Others
 	swapfile = false,
-	updatetime = 250
+	updatetime = 250,
 }
 
 for o, v in pairs(options) do

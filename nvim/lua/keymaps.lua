@@ -47,6 +47,14 @@ local maps = {
 	["C-Tab"] = function()
 		vim.cmd([[bnext]])
 	end,
+
+	-- Lsp
+	["<space>d"] = vim.lsp.buf.definition,
+	["<space>D"] = vim.lsp.buf.declaration,
+	["<space>i"] = vim.lsp.buf.implementation,
+	["<space>f"] = function()
+		vim.lsp.buf.format { async = true }
+	end
 }
 
 vim.g.mapleader = " "

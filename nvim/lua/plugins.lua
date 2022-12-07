@@ -26,6 +26,7 @@ return require("packer").startup({
 		use("williamboman/nvim-lsp-installer")
 		use("hrsh7th/nvim-cmp")
 		use("hrsh7th/cmp-path")
+		use("Saecki/crates.nvim")
 		use("hrsh7th/cmp-buffer")
 		use("hrsh7th/cmp-nvim-lsp")
 		use("tamago324/nlsp-settings.nvim")

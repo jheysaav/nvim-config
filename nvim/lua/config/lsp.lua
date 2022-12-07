@@ -4,7 +4,15 @@ require("nvim-lsp-installer").setup({
 })
 
 local servers = {
-	rust_analyzer = {},
+	rust_analyzer = {
+		settings = {
+			["rust-analyzer"] = {
+				checkOnSave = {
+					command = "clippy",
+				},
+			},
+		},
+	},
 	denols = {
 		root_dir = lsp.util.root_pattern(
 			"mod.ts",
@@ -13,18 +21,13 @@ local servers = {
 			"deno.jsonc",
 			"import_map.json"
 		),
-		init_options = {
-			enable = true,
-			unstable = true,
-		},
 	},
 	tsserver = {
 		root_dir = lsp.util.root_pattern("package.json", "tsconfig.json"),
 	},
 	taplo = {},
-	gopls = {},
 	clangd = {},
-	asm_lsp = {},
+	-- asm_lsp = {}, -- This plugin fail in the installation, I've turned off temporarily
 
 	html = {},
 	volar = {},
@@ -37,7 +40,6 @@ local servers = {
 	jsonls = {},
 	yamlls = {},
 	pyright = {},
-	dockerls = {},
 	sumneko_lua = {
 		settings = {
 			Lua = {
@@ -59,13 +61,9 @@ for server, _ in pairs(servers) do
 end
 
 -- Diagnostic
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
-vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
+vim.cmd(
+	[[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
+)
 
 vim.diagnostic.config({
 	virtual_text = false,

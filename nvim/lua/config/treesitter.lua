@@ -16,7 +16,7 @@ require("nvim-treesitter.configs").setup({
 		"fish",
 		"json",
 		"latex",
-		"python"
+		"python",
 	},
-	highlight = { enable = true }
+	highlight = { enable = true },
 })
