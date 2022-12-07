@@ -1,4 +1,5 @@
 local telescope_builtin = require("telescope.builtin")
+local crates = require("crates")
 
 local maps = {
 	-- Basic
@@ -41,20 +42,26 @@ local maps = {
 	end,
 
 	-- Buffers
-	["<C-q>"] = function()
+	["<leader>bd"] = function()
 		vim.cmd([[bdelete]])
 	end,
-	["C-Tab"] = function()
+	["<leader><Tab>"] = function()
 		vim.cmd([[bnext]])
 	end,
 
 	-- Lsp
-	["<space>d"] = vim.lsp.buf.definition,
-	["<space>D"] = vim.lsp.buf.declaration,
-	["<space>i"] = vim.lsp.buf.implementation,
-	["<space>f"] = function()
-		vim.lsp.buf.format { async = true }
-	end
+	["<leader>d"] = vim.lsp.buf.definition,
+	["<leader>D"] = vim.lsp.buf.declaration,
+	["<leader>i"] = vim.lsp.buf.implementation,
+	["<leader>f"] = function()
+		vim.lsp.buf.format({ async = true })
+	end,
+
+	-- Crates
+	["<leader>cu"] = crates.update_crate,
+	["<leader>ca"] = crates.update_all_crates,
+	["<leader>cU"] = crates.upgrade_crate,
+	["<leader>cA"] = crates.upgrade_all_crates,
 }
 
 vim.g.mapleader = " "

@@ -1,6 +1,5 @@
 require("nvim-tree").setup({
 	disable_netrw = true,
-	update_cwd = true,
 	filters = { custom = { "^.git$" } },
 	actions = {
 		open_file = {

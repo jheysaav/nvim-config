@@ -56,7 +56,6 @@ return require("packer").startup({
 		use("akinsho/bufferline.nvim")
 		use("nvim-lualine/lualine.nvim")
 		use("gpanders/editorconfig.nvim")
-		use("norcalli/nvim-colorizer.lua")
 		use("lukas-reineke/indent-blankline.nvim")
 
 		if packer_bootstrap then

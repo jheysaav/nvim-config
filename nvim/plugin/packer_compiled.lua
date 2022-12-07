@@ -10,6 +10,9 @@ end
 vim.api.nvim_command("packadd packer.nvim")
 
 local no_errors, error_msg = pcall(function()
+	_G._packer = _G._packer or {}
+	_G._packer.inside_compile = true
+
 	local time
 	local profile_info
 	local should_profile = false
@@ -41,8 +44,16 @@ local no_errors, error_msg = pcall(function()
 				results[i] = elem[1] .. " took " .. elem[2] .. "ms"
 			end
 		end
+		if threshold then
+			table.insert(
+				results,
+				"(Only showing plugins that took longer than "
+					.. threshold
+					.. " ms "
+					.. "to load)"
+			)
+		end
 
-		_G._packer = _G._packer or {}
 		_G._packer.profile_output = results
 	end
 
@@ -84,11 +95,6 @@ local no_errors, error_msg = pcall(function()
 	time([[try_loadstring definition]], false)
 	time([[Defining packer_plugins]], true)
 	_G.packer_plugins = {
-		["FixCursorHold.nvim"] = {
-			loaded = true,
-			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
-			url = "https://github.com/antoinemadec/FixCursorHold.nvim",
-		},
 		LuaSnip = {
 			loaded = true,
 			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -119,20 +125,30 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
 			url = "https://github.com/saadparwaiz1/cmp_luasnip",
 		},
-		["codicons.nvim"] = {
-			loaded = true,
-			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/codicons.nvim",
-			url = "https://github.com/mortepau/codicons.nvim",
-		},
 		["copilot.vim"] = {
 			loaded = true,
 			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/copilot.vim",
 			url = "https://github.com/github/copilot.vim",
 		},
+		["crates.nvim"] = {
+			loaded = true,
+			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/crates.nvim",
+			url = "https://github.com/Saecki/crates.nvim",
+		},
+		["editorconfig.nvim"] = {
+			loaded = true,
+			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
+			url = "https://github.com/gpanders/editorconfig.nvim",
+		},
 		["filetype.nvim"] = {
 			loaded = true,
 			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/filetype.nvim",
 			url = "https://github.com/nathom/filetype.nvim",
+		},
+		["github-nvim-theme"] = {
+			loaded = true,
+			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+			url = "https://github.com/projekt0n/github-nvim-theme",
 		},
 		["gitsigns.nvim"] = {
 			loaded = true,
@@ -143,11 +159,6 @@ local no_errors, error_msg = pcall(function()
 			loaded = true,
 			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/impatient.nvim",
 			url = "https://github.com/lewis6991/impatient.nvim",
-		},
-		["indent-blankline.nvim"] = {
-			loaded = true,
-			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-			url = "https://github.com/lukas-reineke/indent-blankline.nvim",
 		},
 		["lspkind.nvim"] = {
 			loaded = true,
@@ -190,12 +201,14 @@ local no_errors, error_msg = pcall(function()
 			url = "https://github.com/neovim/nvim-lspconfig",
 		},
 		["nvim-notify"] = {
-			config = {
-				"\27LJ\2\n2\0\0\4\0\3\0\0066\0\0\0006\1\2\0'\3\1\0B\1\2\2=\1\1\0K\0\1\0\frequire\vnotify\bvim\0",
-			},
 			loaded = true,
 			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/nvim-notify",
 			url = "https://github.com/rcarriga/nvim-notify",
+		},
+		["nvim-tree.lua"] = {
+			loaded = true,
+			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+			url = "https://github.com/kyazdani42/nvim-tree.lua",
 		},
 		["nvim-treesitter"] = {
 			loaded = true,
@@ -207,11 +220,6 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
 			url = "https://github.com/kyazdani42/nvim-web-devicons",
 		},
-		["onedark.nvim"] = {
-			loaded = true,
-			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-			url = "https://github.com/navarasu/onedark.nvim",
-		},
 		["packer.nvim"] = {
 			loaded = true,
 			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -222,17 +230,21 @@ local no_errors, error_msg = pcall(function()
 			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/plenary.nvim",
 			url = "https://github.com/nvim-lua/plenary.nvim",
 		},
+		["telescope.nvim"] = {
+			loaded = true,
+			path = "/home/jheyson/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+			url = "https://github.com/nvim-telescope/telescope.nvim",
+		},
 	}
 
 	time([[Defining packer_plugins]], false)
-	-- Config for: nvim-notify
-	time([[Config for nvim-notify]], true)
-	try_loadstring(
-		"\27LJ\2\n2\0\0\4\0\3\0\0066\0\0\0006\1\2\0'\3\1\0B\1\2\2=\1\1\0K\0\1\0\frequire\vnotify\bvim\0",
-		"config",
-		"nvim-notify"
-	)
-	time([[Config for nvim-notify]], false)
+
+	_G._packer.inside_compile = false
+	if _G._packer.needs_bufread == true then
+		vim.cmd("doautocmd BufRead")
+	end
+	_G._packer.needs_bufread = false
+
 	if should_profile then
 		save_profiles()
 	end
