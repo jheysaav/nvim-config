@@ -23,7 +23,8 @@ local servers = {
 		),
 	},
 	tsserver = {
-		root_dir = lsp.util.root_pattern("package.json", "tsconfig.json"),
+		single_file_support = false,
+		root_dir = lsp.util.root_pattern("package.json"),
 	},
 	taplo = {},
 	clangd = {},
