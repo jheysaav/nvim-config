@@ -15,4 +15,5 @@ require("nvim-treesitter.configs").setup({
 		"json",
 	},
 	highlight = { enable = true },
+	additional_vim_regex_highlighting = false,
 })
