@@ -8,7 +8,6 @@ local options = {
 	shiftwidth = 4,
 	softtabstop = 4,
 	autoindent = true,
-	smartindent = true,
 
 	-- Clipboard
 	clipboard = "unnamedplus",
@@ -22,10 +21,11 @@ local options = {
 	relativenumber = true,
 	list = true,
 	listchars = "tab:» ,space:⋅",
+	completeopt = { "menu", "menuone", "noinsert", "noselect" },
 
 	-- Others
 	swapfile = false,
-	updatetime = 250,
+	updatetime = 250
 }
 
 for o, v in pairs(options) do

@@ -14,13 +14,7 @@ local servers = {
 		},
 	},
 	denols = {
-		root_dir = lsp.util.root_pattern(
-			"mod.ts",
-			"deps.ts",
-			"deno.json",
-			"deno.jsonc",
-			"import_map.json"
-		),
+		root_dir = lsp.util.root_pattern("mod.ts", "deps.ts", "deno.json", "deno.jsonc", "import_map.json"),
 	},
 	tsserver = {
 		single_file_support = false,
@@ -28,19 +22,8 @@ local servers = {
 	},
 	taplo = {},
 	clangd = {},
-	-- asm_lsp = {}, -- This plugin fail in the installation, I've turned off temporarily
+	asm_lsp = {},
 
-	html = {},
-	volar = {},
-	cssls = {},
-	eslint = {},
-	emmet_ls = {},
-	tailwindcss = {},
-
-	ltex = {},
-	jsonls = {},
-	yamlls = {},
-	pyright = {},
 	sumneko_lua = {
 		settings = {
 			Lua = {
@@ -52,9 +35,7 @@ local servers = {
 	},
 }
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities(
-	vim.lsp.protocol.make_client_capabilities()
-)
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local opts = { capabilities = capabilities }
 for server, _ in pairs(servers) do
 	opts = vim.tbl_deep_extend("force", opts, servers[server])
@@ -62,9 +43,7 @@ for server, _ in pairs(servers) do
 end
 
 -- Diagnostic
-vim.cmd(
-	[[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
-)
+vim.cmd([[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]])
 
 vim.diagnostic.config({
 	virtual_text = false,

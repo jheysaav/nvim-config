@@ -1,5 +1,1 @@
-require("lualine").setup({
-	options = {
-		theme = "github_light_default",
-	},
-})
+require("lualine").setup()

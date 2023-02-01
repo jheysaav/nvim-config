@@ -1,5 +1,4 @@
-local install_path = vim.fn.stdpath("data")
-	.. "/site/pack/packer/start/packer.nvim"
+local install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 local packer_bootstrap = nil
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 	packer_bootstrap = vim.fn.system({
@@ -29,7 +28,6 @@ return require("packer").startup({
 		use("Saecki/crates.nvim")
 		use("hrsh7th/cmp-buffer")
 		use("hrsh7th/cmp-nvim-lsp")
-		use("tamago324/nlsp-settings.nvim")
 
 		-- Snippets
 		use("L3MON4D3/LuaSnip")
@@ -49,7 +47,6 @@ return require("packer").startup({
 		use("kyazdani42/nvim-web-devicons")
 
 		-- Utils
-		use("rcarriga/nvim-notify")
 		use("nvim-lua/plenary.nvim")
 		use("windwp/nvim-autopairs")
 		use("lewis6991/gitsigns.nvim")

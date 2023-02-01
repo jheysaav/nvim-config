@@ -4,7 +4,6 @@ require("nvim-treesitter.configs").setup({
 		"javascript",
 		"rust",
 		"toml",
-		"go",
 		"c",
 		"cpp",
 		"vue",
@@ -13,10 +12,7 @@ require("nvim-treesitter.configs").setup({
 		"scss",
 		"lua",
 		"html",
-		"fish",
 		"json",
-		"latex",
-		"python",
 	},
 	highlight = { enable = true },
 })
