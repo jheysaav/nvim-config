@@ -37,6 +37,7 @@ local servers = {
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local opts = { capabilities = capabilities }
+
 for server, _ in pairs(servers) do
 	opts = vim.tbl_deep_extend("force", opts, servers[server])
 	lsp[server].setup(opts)

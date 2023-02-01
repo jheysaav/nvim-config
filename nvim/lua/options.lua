@@ -5,6 +5,8 @@ local options = {
 
 	-- Indentation
 	tabstop = 4,
+	shiftwidth = 4,
+	softtabstop = 4,
 	autoindent = true,
 	smartindent = true,
 
@@ -13,7 +15,7 @@ local options = {
 
 	-- UI
 	mouse = "a",
-	wrap = false,
+	wrap = true,
 	numberwidth = 2,
 	showmode = false,
 	cursorline = true,

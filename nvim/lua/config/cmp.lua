@@ -12,7 +12,7 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<Down>"] = cmp.mapping.select_next_item(),
 		["<Up>"] = cmp.mapping.select_prev_item(),
-		["<CR>"] = cmp.mapping.confirm(),
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
 	},
 	formatting = {
 		format = lspkind.cmp_format({
