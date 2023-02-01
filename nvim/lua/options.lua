@@ -1,6 +1,5 @@
 local options = {
 	-- Colours
-	syntax = "on",
 	background = "light",
 	termguicolors = true,
 
@@ -23,7 +22,6 @@ local options = {
 	relativenumber = true,
 	list = true,
 	listchars = "tab:» ,space:⋅",
-	completeopt = { "menu", "menuone", "noselect" },
 
 	-- Others
 	swapfile = false,

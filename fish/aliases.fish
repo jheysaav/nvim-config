@@ -1,6 +1,6 @@
 alias rm "rm -rf"
 alias ll "ls -lh"
-alias lsa "ls -lah"
+alias lsa "ls -lAh"
 alias md "mkdir -p"
 
 alias g "git"

@@ -5,6 +5,7 @@ set -gx PATH "$HOME/.cargo/bin" \
 	"$HOME/.deno/bin" \
 	$PNPM_HOME \
 	"$HOME/go/bin" \
+    "$HOME/.local/bin" \
 	$PATH
 
 # Setup aliases
