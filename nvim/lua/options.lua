@@ -6,8 +6,9 @@ local options = {
 	-- Indentation
 	tabstop = 4,
 	shiftwidth = 4,
-	softtabstop = 4,
+	expandtab = true,
 	autoindent = true,
+	smartindent = true,
 
 	-- Clipboard
 	clipboard = "unnamedplus",
@@ -25,7 +26,7 @@ local options = {
 
 	-- Others
 	swapfile = false,
-	updatetime = 250
+	updatetime = 250,
 }
 
 for o, v in pairs(options) do
