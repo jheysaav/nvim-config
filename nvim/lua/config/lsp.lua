@@ -28,6 +28,7 @@ local servers = {
 
 	-- Web development
 	html = {},
+	cssls = {},
 	volar = {},
 	eslint = {},
 	emmet_ls = {},
