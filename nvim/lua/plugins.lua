@@ -21,13 +21,14 @@ return require("packer").startup({
 
 		-- Completion tools
 		use("github/copilot.vim")
-		use("neovim/nvim-lspconfig")
-		use("williamboman/nvim-lsp-installer")
 		use("hrsh7th/nvim-cmp")
 		use("hrsh7th/cmp-path")
 		use("Saecki/crates.nvim")
 		use("hrsh7th/cmp-buffer")
 		use("hrsh7th/cmp-nvim-lsp")
+		use("neovim/nvim-lspconfig")
+		use("williamboman/mason.nvim")
+		use("williamboman/mason-lspconfig.nvim")
 
 		-- Snippets
 		use("L3MON4D3/LuaSnip")

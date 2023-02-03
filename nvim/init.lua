@@ -1,9 +1,9 @@
-require("impatient")
-require("filetype")
-
 require("plugins")
 require("options")
 require("keymaps")
+
+require("impatient")
+require("filetype")
 
 require("config.lsp")
 require("config.cmp")

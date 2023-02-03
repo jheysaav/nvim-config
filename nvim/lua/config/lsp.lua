@@ -1,9 +1,11 @@
 local lsp = require("lspconfig")
-require("nvim-lsp-installer").setup({
-	automatic_installation = true,
+require("mason").setup()
+require("mason-lspconfig").setup({
+	automatic_installation = true
 })
 
 local servers = {
+	-- Main languages
 	rust_analyzer = {
 		settings = {
 			["rust-analyzer"] = {
@@ -24,6 +26,16 @@ local servers = {
 	clangd = {},
 	asm_lsp = {},
 
+	-- Web development
+	html = {},
+	volar = {},
+	eslint = {},
+	emmet_ls = {},
+	marksman = {},
+	tailwindcss = {},
+	
+	-- Scripting
+	pyright = {},
 	sumneko_lua = {
 		settings = {
 			Lua = {
@@ -33,6 +45,8 @@ local servers = {
 			},
 		},
 	},
+	jsonls = {},
+	yamlls = {}
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
