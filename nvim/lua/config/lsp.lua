@@ -1,7 +1,7 @@
 local lsp = require("lspconfig")
 require("mason").setup()
 require("mason-lspconfig").setup({
-	automatic_installation = true
+	automatic_installation = true,
 })
 
 local servers = {
@@ -34,10 +34,10 @@ local servers = {
 	emmet_ls = {},
 	marksman = {},
 	tailwindcss = {},
-	
+
 	-- Scripting
 	pyright = {},
-	sumneko_lua = {
+	lua_ls = {
 		settings = {
 			Lua = {
 				diagnostics = {
@@ -47,7 +47,7 @@ local servers = {
 		},
 	},
 	jsonls = {},
-	yamlls = {}
+	yamlls = {},
 }
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
