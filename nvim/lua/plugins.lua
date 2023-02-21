@@ -73,11 +73,11 @@ require("lazy").setup({
 	-- Colours & icons
 	"projekt0n/github-nvim-theme",
 	"kyazdani42/nvim-web-devicons",
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", event = "VeryLazy" },
 
 	-- Utils
-	"lewis6991/gitsigns.nvim",
 	"akinsho/bufferline.nvim",
 	"nvim-lualine/lualine.nvim",
-	"lukas-reineke/indent-blankline.nvim",
+	{ "lewis6991/gitsigns.nvim", event = "VeryLazy" },
+	{ "lukas-reineke/indent-blankline.nvim", event = "VeryLazy" },
 })
