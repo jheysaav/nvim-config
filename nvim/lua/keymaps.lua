@@ -1,6 +1,3 @@
-local telescope_builtin = require("telescope.builtin")
-local crates = require("crates")
-
 local maps = {
 	-- Basic
 	["<leader>w"] = function()
@@ -14,17 +11,6 @@ local maps = {
 	end,
 	["<leader>qq"] = function()
 		vim.cmd([[q!]])
-	end,
-
-	-- Telescope
-	["<leader>ff"] = telescope_builtin.find_files,
-
-	-- Tree
-	["<leader>n"] = function()
-		vim.cmd([[NvimTreeToggle]])
-	end,
-	["<leader>nr"] = function()
-		vim.cmd([[NvimTreeRefresh]])
 	end,
 
 	-- Movements
@@ -56,15 +42,7 @@ local maps = {
 	["<leader>f"] = function()
 		vim.lsp.buf.format({ async = true })
 	end,
-
-	-- Crates
-	["<leader>cu"] = crates.update_crate,
-	["<leader>ca"] = crates.update_all_crates,
-	["<leader>cU"] = crates.upgrade_crate,
-	["<leader>cA"] = crates.upgrade_all_crates,
 }
-
-vim.g.mapleader = " "
 
 for k, v in pairs(maps) do
 	vim.keymap.set("n", k, v, { silent = true, noremap = true })
