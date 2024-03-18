@@ -1,6 +1,6 @@
 return {
     "zbirenbaum/copilot.lua",
-    event = { "InsertEnter", "LspAttach" },
+    event = { "InsertEnter" },
     dependencies = { "zbirenbaum/copilot-cmp" },
     config = function()
 require("copilot").setup({
