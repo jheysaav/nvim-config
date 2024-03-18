@@ -1,15 +1,13 @@
 local options = {
-  -- Colours
+  -- Colors
   background = "light",
   termguicolors = true,
 
   -- Indentation
   tabstop = 4,
   shiftwidth = 4,
-  softtabstop = 4,
   expandtab = true,
   autoindent = true,
-  smartindent = true,
 
   -- Clipboard
   clipboard = "unnamedplus",

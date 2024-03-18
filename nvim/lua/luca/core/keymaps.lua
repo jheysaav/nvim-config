@@ -44,6 +44,8 @@ local maps = {
   end,
 }
 
+vim.g.mapleader = " "
+
 for k, v in pairs(maps) do
   vim.keymap.set("n", k, v, { silent = true, noremap = true })
 end
